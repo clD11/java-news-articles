@@ -1,7 +1,6 @@
 package com.news_articles.service.article;
 
 import com.news_articles.data.model.Article;
-import com.news_articles.data.persistence.InsertRowException;
 import com.news_articles.data.persistence.SimpleDatabase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

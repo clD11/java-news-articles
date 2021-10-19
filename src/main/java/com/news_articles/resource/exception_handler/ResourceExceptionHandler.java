@@ -1,4 +1,4 @@
-package com.news_articles.resource.exception;
+package com.news_articles.resource.exception_handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
