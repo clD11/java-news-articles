@@ -1,5 +1,6 @@
 package util;
 
+import com.news_articles.data.model.Article;
 import com.news_articles.resource.article.ArticleDto;
 import com.news_articles.resource.article.ArticlesDto;
 
@@ -59,6 +60,52 @@ public class TestDataSupport {
                 .withUserID(userID)
                 .withArticleDtos(categories)
                 .build();
+    }
+
+    public static List<Article> createArticles() {
+        List<Article> sport = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            sport.add(Article.ArticleBuilder.newArticleBuilder()
+                    .withTitle(TestSupportRandom.randomString())
+                    .withCategory("sport")
+                    .withLike(true)
+                    .build());
+        }
+
+        List<Article> business = new ArrayList<>();
+        for (int i = 0; i < 4; i++) {
+            sport.add(Article.ArticleBuilder.newArticleBuilder()
+                    .withTitle(TestSupportRandom.randomString())
+                    .withCategory("business")
+                    .withLike(true)
+                    .build());
+        }
+
+        List<Article> art = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            sport.add(Article.ArticleBuilder.newArticleBuilder()
+                    .withTitle(TestSupportRandom.randomString())
+                    .withCategory("art")
+                    .withLike(true)
+                    .build());
+        }
+
+        List<Article> entertainment = new ArrayList<>();
+        for (int i = 0; i < 2; i++) {
+            sport.add(Article.ArticleBuilder.newArticleBuilder()
+                    .withTitle(TestSupportRandom.randomString())
+                    .withCategory("entertainment")
+                    .withLike(true)
+                    .build());
+        }
+
+        List<Article> categories = new ArrayList<>();
+        categories.addAll(sport);
+        categories.addAll(business);
+        categories.addAll(art);
+        categories.addAll(entertainment);
+
+        return categories;
     }
 
 }
