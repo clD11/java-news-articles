@@ -1,8 +1,8 @@
-package com.news_articles.service;
+package com.news_articles.service.article;
 
 import com.news_articles.data.model.Article;
-import com.news_articles.data.repository.InsertRowException;
-import com.news_articles.data.repository.SimpleDatabase;
+import com.news_articles.data.persistence.InsertRowException;
+import com.news_articles.data.persistence.SimpleDatabase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,11 +18,11 @@ public class ArticleService {
         this.simpleDatabase = simpleDatabase;
     }
 
-    public void create(String userID, List<Article> articles) {
+    public void save(String userID, List<Article> articles) {
         try {
-            simpleDatabase.insert(userID, articles);
-        } catch (InsertRowException ire) {
-            throw new RuntimeException("article service: could not create articles", ire);
+            simpleDatabase.save(userID, articles);
+        } catch (Exception e) {
+            throw new ArticleServiceException("Could not create articles", e);
         }
     }
 }

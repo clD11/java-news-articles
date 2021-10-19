@@ -1,7 +1,7 @@
 package com.news_articles.resource.article;
 
 import com.news_articles.data.model.Article;
-import com.news_articles.service.ArticleService;
+import com.news_articles.service.article.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +28,7 @@ public class ArticleResource {
     @PostMapping
     ResponseEntity<String> postArticles(@RequestBody ArticlesDto articlesDto) {
         List<Article> articles = articleMapper.map(articlesDto);
-        articleService.create(articlesDto.getUserID(), articles);
+        articleService.save(articlesDto.getUserID(), articles);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 

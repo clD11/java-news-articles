@@ -1,4 +1,4 @@
-package com.news_articles.data.repository;
+package com.news_articles.data.persistence;
 
 import org.springframework.stereotype.Component;
 
@@ -10,16 +10,16 @@ public class SimpleDatabase {
 
     private static final Map<String, Object> DATABASE = new HashMap<>();
 
-    public void insert(String id, Object data) {
+    public void save(String id, Object data) {
         if (DATABASE.containsKey(id)) {
-            throw new InsertRowException("simple database: could not insert row");
+            throw new InsertRowException("Could not insert row");
         }
         DATABASE.put(id, data);
     }
 
-    public Object select(String id) {
+    public Object get(String id) {
         if (!DATABASE.containsKey(id)) {
-            throw new NoRowException("simple database: could not select row");
+            throw new NoRowException("Could not select row");
         }
         return DATABASE.get(id);
     }
