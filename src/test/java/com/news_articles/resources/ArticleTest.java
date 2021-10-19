@@ -27,6 +27,8 @@ public class ArticleTest {
 
     @Test
     void shouldPostArticles() {
+        String url = String.format("http://localhost:%d/api/v1/articles", port);
+
         var articleDto = newArticleDtoBuilder()
                 .withTitle(randomString())
                 .withCategory(randomString())
@@ -37,8 +39,6 @@ public class ArticleTest {
                 .withUserID(randomString())
                 .withArticleDtos(List.of(articleDto))
                 .build();
-
-        String url = String.format("http://localhost:%d/api/v1/articles", port);
 
         var actual = testRestTemplate.postForEntity(url, articlesDto, String.class);
         assertThat(actual.getStatusCode(), is(HttpStatus.CREATED));
@@ -46,6 +46,8 @@ public class ArticleTest {
 
     @Test
     void shouldReturnBadRequestWhenArticlesAlreadyStoredAgainstUserID() {
+        String url = String.format("http://localhost:%d/api/v1/articles", port);
+
         var articleDto = newArticleDtoBuilder()
                 .withTitle(randomString())
                 .withCategory(randomString())
@@ -56,8 +58,6 @@ public class ArticleTest {
                 .withUserID(randomString())
                 .withArticleDtos(List.of(articleDto))
                 .build();
-
-        String url = String.format("http://localhost:%d/api/v1/articles", port);
 
         var response = testRestTemplate.postForEntity(url, articlesDto, String.class);
         assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
