@@ -15,8 +15,6 @@ Your task is to pick up their work and finish the service.
 
 2. Fix the broken test in ArticleTest
 
-2. Implement a new feature so we can retrieve all the articles for a given user
-
 3. Implement a new feature so we can determine the top three categories the user liked the most
 
 _Treat this like your own project, if there are any code smells or things that can be improved call them out_ 
