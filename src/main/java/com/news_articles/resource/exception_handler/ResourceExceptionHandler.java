@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ResourceExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
-    public ResponseEntity<String> handleRuntimeException(Exception e) {
+    public ResponseEntity<String> handleException(Exception e) {
         logger(e);
         return new ResponseEntity<>("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
     }
