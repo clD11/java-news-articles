@@ -17,7 +17,7 @@ public class SimpleDatabase {
         DATABASE.put(id, data);
     }
 
-    public Object get(String id) {
+    public Object getById(String id) {
         if (!DATABASE.containsKey(id)) {
             throw new NoRowException("Could not select row");
         }
