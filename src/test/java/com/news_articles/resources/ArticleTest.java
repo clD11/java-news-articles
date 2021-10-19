@@ -1,4 +1,4 @@
-package com.news_articles.it;
+package com.news_articles.resources;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +11,8 @@ import java.util.List;
 
 import static com.news_articles.resource.article.ArticleDto.ArticleDtoBuilder.newArticleDtoBuilder;
 import static com.news_articles.resource.article.ArticlesDto.ArticlesDtoBuilder.newArticlesDtoBuilder;
-import static com.news_articles.util.TestSupportRandom.randomBoolean;
-import static com.news_articles.util.TestSupportRandom.randomString;
+import static util.TestSupportRandom.randomBoolean;
+import static util.TestSupportRandom.randomString;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 

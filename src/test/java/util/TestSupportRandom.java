@@ -1,6 +1,5 @@
-package com.news_articles.util;
+package util;
 
-import java.util.Random;
 import java.util.UUID;
 
 public class TestSupportRandom {
