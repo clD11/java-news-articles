@@ -9,23 +9,6 @@ import java.util.stream.Collectors;
 @Component
 public class ArticleMapper {
 
-    public ArticlesDto map(String userID, List<Article> articles) {
-        List<ArticleDto> articleDtos = articles.stream().map(this::map)
-                .collect(Collectors.toList());
-        return ArticlesDto.ArticlesDtoBuilder.newArticlesDtoBuilder()
-                .withUserID(userID)
-                .withArticleDtos(articleDtos)
-                .build();
-    }
-
-    public ArticleDto map(Article article) {
-        return ArticleDto.ArticleDtoBuilder.newArticleDtoBuilder()
-                .withTitle(article.getTitle())
-                .withCategory(article.getCategory())
-                .withLike(article.isLike())
-                .build();
-    }
-
     public List<Article> map(ArticlesDto articlesDto) {
         return articlesDto.getArticleDtos().stream().map(this::map)
                 .collect(Collectors.toList());
@@ -39,4 +22,5 @@ public class ArticleMapper {
                 .withLike(articleDto.isLike())
                 .build();
     }
+
 }
