@@ -23,4 +23,9 @@ public class SimpleDatabase {
         }
         return DATABASE.get(id);
     }
+
+    public boolean exists(String id) {
+        return DATABASE.get(id) != null;
+    }
+
 }
