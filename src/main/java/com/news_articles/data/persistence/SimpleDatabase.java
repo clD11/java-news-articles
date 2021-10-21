@@ -25,7 +25,7 @@ public class SimpleDatabase {
     }
 
     public boolean exists(String id) {
-        return DATABASE.get(id) != null;
+        return DATABASE.containsKey(id);
     }
 
 }
