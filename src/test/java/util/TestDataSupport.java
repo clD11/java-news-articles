@@ -11,6 +11,17 @@ import static com.news_articles.resource.article.ArticleDto.ArticleDtoBuilder.*;
 
 public class TestDataSupport {
 
+    /**
+     * This test support class creates dummy test data for the final task.
+     *
+     * Each of the Articles has a title, category and like
+     *
+     * If a user likes a category the like field is set to true
+     *
+     * A category with the most likes would be the users favourite
+     *
+     */
+
     public static ArticlesDto createRequestData() {
         var userID = TestSupportRandom.randomString();
 
