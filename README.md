@@ -9,6 +9,11 @@ One of our developers started work on a RESTful service, but they are off on ann
 
 Your task is to pick up their work and finish the service.
 
+##### Pre-requisites
+
+* This project requires [Java 11](https://jdk.java.net/java-se-ri/11) to run
+* This project uses [Maven](https://maven.apache.org/) for dependency management
+
 ##### Tasks
 
 1. Clone the repository and build the code
